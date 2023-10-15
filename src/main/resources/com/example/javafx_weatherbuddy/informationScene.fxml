@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="450.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx_weatherbuddy.InformationSceneController">
+   <children>
+      <Label alignment="CENTER" layoutY="384.0" prefHeight="17.0" prefWidth="454.0" text="Michał Wierzchowiak 2023®" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../gitIcon.png" />
+         </image>
+         <effect>
+            <Bloom />
+         </effect>
+      </ImageView>
+      <Hyperlink layoutX="136.0" layoutY="332.0" text="https://github.com/mich-wierzch" />
+      <Button layoutX="202.0" layoutY="474.0" mnemonicParsing="false" onAction="#onGoBackButtonClick" text="Go back" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,60 @@
+#searchTextField{
+    -fx-font-family: Dialog;
+    -fx-font-size: 24;
+}
+#searchButton{
+    -fx-background-color: transparent;
+}
+#tempText {
+    -fx-font-family: Dialog;
+    -fx-font-weight: bold;
+    -fx-font-size: 48;
+}
+#weatherCondDescription{
+    -fx-font-family: Dialog;
+    -fx-font-size: 32;
+}
+#humidityText{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+#humidityValue{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+}
+#locationText{
+    fx-font-family: Dialog;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+#windspeedText{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+#windspeedValue{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+}
+#pressureText{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+#pressureValue{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+}
+#errorText{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+}
+#apiFailureText{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+}
+#noDataFoundText{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+}
