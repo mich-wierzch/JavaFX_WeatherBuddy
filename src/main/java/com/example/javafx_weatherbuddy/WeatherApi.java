@@ -26,7 +26,7 @@ public class WeatherApi {
 
 
 
-    private final static OpenWeatherMapClient openWeatherMapClient = new OpenWeatherMapClient("c3f43823b4b5a61f58dbf5e8008325e8");
+    private final static OpenWeatherMapClient openWeatherMapClient = new OpenWeatherMapClient("YOUR API KEY HERE");
     private JSONObject fetchCurrentWeatherData(String location){
         final String weatherData = openWeatherMapClient
                 .currentWeather()
