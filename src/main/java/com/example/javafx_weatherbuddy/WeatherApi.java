@@ -12,16 +12,16 @@ import org.json.simple.parser.ParseException;
 public class WeatherApi {
 
 
-    private double temperature;
+    private Double temperature;
     private String city;
-    private long humidity;
-    private double windspeed;
-    private long pressure;
+    private Long humidity;
+    private Double windspeed;
+    private Long pressure;
 
     private String weatherCondition;
 
 
-    private long responseStatus;
+    private Long responseStatus;
 
 
 
@@ -57,10 +57,18 @@ public class WeatherApi {
         JSONObject weatherObject = (JSONObject) weatherArray.get(0);
 
 
-        temperature = (double) mainObject.get("temp");
+        temperature = (Double) mainObject.get("temp");
         city = (String) weatherData.get("name");
         humidity = (Long) mainObject.get("humidity");
-        windspeed = (double) windObject.get("speed");
+
+        Object windSpeedValue = windObject.get("speed");
+        if (windSpeedValue instanceof Double){
+            windspeed = (Double) windSpeedValue;
+        } else if (windSpeedValue instanceof Long){
+            windspeed = ((Long) windSpeedValue).doubleValue();
+        }
+
+
         pressure = (Long) mainObject.get("pressure");
         weatherCondition = (String) weatherObject.get("main");
         responseStatus = (Long) weatherData.get("cod");
@@ -87,7 +95,7 @@ public class WeatherApi {
     }
 
 
-    public double getTemperature() {
+    public Double getTemperature() {
         return temperature;
     }
 
@@ -95,21 +103,21 @@ public class WeatherApi {
         return city;
     }
 
-    public long getHumidity() {
+    public Long getHumidity() {
         return humidity;
     }
 
-    public double getWindspeed() {
+    public Double getWindspeed() {
         return windspeed;
     }
 
-    public long getPressure() {
+    public Long getPressure() {
         return pressure;
     }
     public String getWeatherCondition() {
         return weatherCondition;
     }
-    public long getResponseStatus() {
+    public Long getResponseStatus() {
         return responseStatus;
     }
 
