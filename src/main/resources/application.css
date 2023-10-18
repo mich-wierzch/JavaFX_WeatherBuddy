@@ -26,7 +26,6 @@
 #locationText{
     fx-font-family: Dialog;
     -fx-font-size: 16;
-    -fx-font-weight: bold;
 }
 #windspeedText{
     -fx-font-family: Dialog;
@@ -55,6 +54,19 @@
     -fx-font-size: 16;
 }
 #noDataFoundText{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+}
+#clockTimeText{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+}
+#locationTitle{
+    -fx-font-family: Dialog;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+#clockValue{
     -fx-font-family: Dialog;
     -fx-font-size: 16;
 }

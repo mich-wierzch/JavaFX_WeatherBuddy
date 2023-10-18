@@ -10,6 +10,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.time.Instant;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
 
 public class Controller {
 
@@ -35,6 +38,8 @@ public class Controller {
     private Label apiFailureText;
     @FXML
     private Label noDataFoundText;
+    @FXML
+    private Label clockValue;
     private final WeatherApi weatherApi = new WeatherApi();
     private final InformationSceneController informationSceneController = new InformationSceneController();
     @FXML
@@ -43,6 +48,7 @@ public class Controller {
             errorText.setVisible(false);
             apiFailureText.setVisible(false);
             noDataFoundText.setVisible(false);
+
 
             String locationInput = searchTextField.getText();
             searchTextField.clear();
@@ -53,6 +59,9 @@ public class Controller {
             }
 
             weatherApi.extractWeatherData(locationInput);
+
+
+            clockValue.setText(weatherApi.getCurrentTime(locationInput));
 
             if (!String.valueOf(weatherApi.getResponseStatus()).equals("200")) {
                 apiFailureText.setVisible(true);

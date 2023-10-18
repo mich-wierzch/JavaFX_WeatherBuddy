@@ -53,7 +53,7 @@
             </ImageView>
          </graphic></Label>
       <Label fx:id="humidityText" layoutX="70.0" layoutY="563.0" text="Humidity" />
-      <Label fx:id="humidityValue" alignment="CENTER" layoutX="69.0" layoutY="580.0" prefHeight="17.0" prefWidth="60.0" text="---" />
+      <Label fx:id="humidityValue" alignment="CENTER" layoutX="69.0" layoutY="580.0" prefHeight="17.0" prefWidth="60.0" />
       <Label contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="3.0" layoutY="459.0" prefHeight="53.0" prefWidth="55.0" text="Label">
          <graphic>
             <ImageView fx:id="locationImage" fitHeight="66.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
@@ -63,7 +63,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="locationText" layoutX="80.0" layoutY="484.0" text="---" />
+      <Label fx:id="locationText" layoutX="78.0" layoutY="493.0" prefHeight="17.0" prefWidth="116.0" />
       <Label fx:id="windspeedImage" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="279.0" layoutY="460.0" prefHeight="66.0" prefWidth="49.0" text="Label">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
@@ -74,7 +74,7 @@
          </graphic>
       </Label>
       <Label fx:id="windspeedText" layoutX="354.0" layoutY="476.0" text="Windspeed" />
-      <Label fx:id="windspeedValue" alignment="CENTER" layoutX="349.0" layoutY="493.0" prefHeight="17.0" prefWidth="82.0" text="---" />
+      <Label fx:id="windspeedValue" alignment="CENTER" layoutX="349.0" layoutY="493.0" prefHeight="17.0" prefWidth="82.0" />
       <Label fx:id="pressureImage" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="279.0" layoutY="547.0" prefHeight="53.0" prefWidth="22.0" text="Label">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
@@ -85,7 +85,7 @@
          </graphic>
       </Label>
       <Label fx:id="pressureText" layoutX="362.0" layoutY="563.0" text="Pressure" />
-      <Label fx:id="pressureValue" alignment="CENTER" layoutX="345.0" layoutY="580.0" prefHeight="17.0" prefWidth="101.0" text="---" />
+      <Label fx:id="pressureValue" alignment="CENTER" layoutX="345.0" layoutY="580.0" prefHeight="17.0" prefWidth="101.0" />
       <Label fx:id="errorText" alignment="CENTER" layoutX="16.0" layoutY="63.0" prefHeight="17.0" prefWidth="422.0" text="You have to enter a valid city name/location" textFill="#dd1111" visible="false" />
       <Button contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="406.0" layoutY="613.0" mnemonicParsing="false" onAction="#onInformationButtonClick" text="Button">
          <graphic>
@@ -98,5 +98,16 @@
       </Button>
       <Label fx:id="apiFailureText" alignment="CENTER" layoutX="16.0" layoutY="63.0" prefHeight="17.0" prefWidth="422.0" text="Error connecting to the OpenWeather API !" textFill="#dd1111" visible="false" />
       <Label fx:id="noDataFoundText" alignment="CENTER" layoutX="16.0" layoutY="63.0" prefHeight="17.0" prefWidth="422.0" text="No Data found for the given location" textFill="#dd1111" visible="false" />
+      <Label contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="19.0" layoutY="80.0" text="clockIcon">
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../clockIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="clockValue" layoutX="62.0" layoutY="89.0" text="---" />
+      <Label fx:id="locationTitle" layoutX="81.0" layoutY="476.0" text="Location" />
    </children>
 </AnchorPane>

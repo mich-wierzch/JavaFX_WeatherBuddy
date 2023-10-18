@@ -3,6 +3,7 @@ package com.example.javafx_weatherbuddy;
 import com.github.prominence.openweathermap.api.OpenWeatherMapClient;
 import com.github.prominence.openweathermap.api.enums.Language;
 import com.github.prominence.openweathermap.api.enums.UnitSystem;
+import com.github.prominence.openweathermap.api.model.weather.Weather;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -25,7 +26,7 @@ public class WeatherApi {
 
 
 
-    private final static OpenWeatherMapClient openWeatherMapClient = new OpenWeatherMapClient("YOUR API KEY HERE...");
+    private final static OpenWeatherMapClient openWeatherMapClient = new OpenWeatherMapClient("c3f43823b4b5a61f58dbf5e8008325e8");
     private JSONObject fetchCurrentWeatherData(String location){
         final String weatherData = openWeatherMapClient
                 .currentWeather()
@@ -66,7 +67,26 @@ public class WeatherApi {
 
 
 
+
+
+
     }
+
+    public String getCurrentTime(String location){
+        final Weather weather = openWeatherMapClient
+                .currentWeather()
+                .single()
+                .byCityName(location)
+                .language(Language.ENGLISH)
+                .unitSystem(UnitSystem.METRIC)
+                .retrieve()
+                .asJava();
+
+        String currentTime = String.valueOf(weather.getCalculationTime());
+        return currentTime.substring(currentTime.indexOf('T')+ 1);
+    }
+
+
     public double getTemperature() {
         return temperature;
     }
