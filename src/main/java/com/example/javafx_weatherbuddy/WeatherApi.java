@@ -3,11 +3,16 @@ package com.example.javafx_weatherbuddy;
 import com.github.prominence.openweathermap.api.OpenWeatherMapClient;
 import com.github.prominence.openweathermap.api.enums.Language;
 import com.github.prominence.openweathermap.api.enums.UnitSystem;
+import com.github.prominence.openweathermap.api.model.forecast.Forecast;
+import com.github.prominence.openweathermap.api.model.forecast.WeatherForecast;
 import com.github.prominence.openweathermap.api.model.weather.Weather;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class WeatherApi {
 
@@ -26,7 +31,7 @@ public class WeatherApi {
 
 
 
-    private final static OpenWeatherMapClient openWeatherMapClient = new OpenWeatherMapClient("c3f43823b4b5a61f58dbf5e8008325e8");
+    private final static OpenWeatherMapClient openWeatherMapClient = new OpenWeatherMapClient("YOUR API KEY HERE");
     private JSONObject fetchCurrentWeatherData(String location){
         final String weatherData = openWeatherMapClient
                 .currentWeather()
@@ -93,6 +98,28 @@ public class WeatherApi {
         String currentTime = String.valueOf(weather.getCalculationTime());
         return currentTime.substring(currentTime.indexOf('T')+ 1);
     }
+
+    public ArrayList<String> getFiveDayForecast(String location){
+
+        Forecast weather = openWeatherMapClient.forecast5Day3HourStep()
+                .byCityName(location)
+                .language(Language.ENGLISH)
+                .unitSystem(UnitSystem.METRIC)
+                .retrieve()
+                .asJava();
+
+        Iterator<WeatherForecast> it = weather.getWeatherForecasts().iterator();
+
+        ArrayList<String> weatherForecast = new ArrayList<>();
+        while(it.hasNext()){
+            weatherForecast.add(it.next().getTemperature().toString() + " " + it.next().getForecastTimeISO());
+        }
+        return weatherForecast;
+
+
+
+    }
+
 
 
     public Double getTemperature() {

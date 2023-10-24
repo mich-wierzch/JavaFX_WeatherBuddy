@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx_weatherbuddy.ForecastSceneController">
+   <children>
+      <TextField fx:id="searchTextField" focusTraversable="false" layoutX="14.0" layoutY="14.0" prefHeight="45.0" prefWidth="351.0" promptText="Search for a location" />
+      <Button fx:id="searchButton" contentDisplay="GRAPHIC_ONLY" layoutX="375.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="38.0" prefWidth="45.0" text="Button">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../searchIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextArea fx:id="forecastValue" editable="false" layoutX="14.0" layoutY="71.0" prefHeight="525.0" prefWidth="424.0" wrapText="true" />
+      <Button contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="14.0" layoutY="605.0" mnemonicParsing="false" onAction="#onGoBackButtonClick" text="Button">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../arrowBackIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

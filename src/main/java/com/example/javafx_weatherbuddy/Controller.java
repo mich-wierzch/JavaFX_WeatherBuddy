@@ -3,11 +3,15 @@ package com.example.javafx_weatherbuddy;
 import com.github.prominence.openweathermap.api.exception.NoDataFoundException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -15,6 +19,7 @@ import java.time.LocalTime;
 import java.time.ZoneOffset;
 
 public class Controller {
+
 
     @FXML
     private TextField searchTextField;
@@ -40,8 +45,12 @@ public class Controller {
     private Label noDataFoundText;
     @FXML
     private Label clockValue;
+    @FXML
+    private Label forecastValue;
     private final WeatherApi weatherApi = new WeatherApi();
     private final InformationSceneController informationSceneController = new InformationSceneController();
+    private  final  ForecastSceneController forecastSceneController = new ForecastSceneController();
+    private String locationInput = "";
     @FXML
     protected void onSearchButtonClick(ActionEvent actionEvent){
         try {
@@ -50,7 +59,7 @@ public class Controller {
             noDataFoundText.setVisible(false);
 
 
-            String locationInput = searchTextField.getText();
+            locationInput = searchTextField.getText();
             searchTextField.clear();
 
             if (locationInput.replaceAll("\\s", "").length() <= 0 || locationInput.equals("")) {
@@ -96,6 +105,9 @@ public class Controller {
 
     public void onInformationButtonClick(ActionEvent actionEvent) throws IOException {
         informationSceneController.showInformationScene(actionEvent);
+    }
+    public void onForecastButtonClick(ActionEvent actionEvent) throws  IOException{
+        forecastSceneController.showForecastScene(actionEvent);
     }
 
 }

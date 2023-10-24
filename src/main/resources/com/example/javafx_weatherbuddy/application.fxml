@@ -109,5 +109,14 @@
       </Label>
       <Label fx:id="clockValue" layoutX="62.0" layoutY="89.0" text="---" />
       <Label fx:id="locationTitle" layoutX="81.0" layoutY="476.0" text="Location" />
+      <Button fx:id="forecastButton" contentDisplay="GRAPHIC_ONLY" layoutX="375.0" layoutY="88.0" mnemonicParsing="false" onAction="#onForecastButtonClick" text="Button">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../fiveDayWeatherForecastIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
