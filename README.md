@@ -19,6 +19,10 @@ locate given variable and replace the placeholder text with your API key
 
 
 ## Screenshots
+## ver 2.0
+![App2_Screenshot](https://github.com/mich-wierzch/JavaFX_WeatherBuddy/blob/master/ver2_0preview.png) 
 
-![App Screenshot](https://github.com/mich-wierzch/JavaFX_WeatherBuddy/blob/master/appPreview.png)
 
+---------------------------------------------------------------------------------------------------
+## ver 1.0
+![App Screenshot](https://github.com/mich-wierzch/JavaFX_WeatherBuddy/blob/master/appPreview.png) 
