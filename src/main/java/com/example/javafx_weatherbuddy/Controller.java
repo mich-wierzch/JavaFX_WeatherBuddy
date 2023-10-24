@@ -3,20 +3,12 @@ package com.example.javafx_weatherbuddy;
 import com.github.prominence.openweathermap.api.exception.NoDataFoundException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.Instant;
-import java.time.LocalTime;
-import java.time.ZoneOffset;
 
 public class Controller {
 
